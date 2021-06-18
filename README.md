@@ -1,8 +1,11 @@
 # Jetson Nano Image to Text Server
 Aplicación en Python para Jetson Nano que recive imagenes, hace inferencia sobre ellas y retorna al cliente una oración enumaerando las objetos detectados y la imagen con bounding boxes de los objetos detectados.
 Retorna mensajes informativos en la consola sobre las conexiones activas y las operaciones que esta realizando:
-![]{./start_up.png}{App start up and loading of model}
-![]{./new_conn.png}{Init server and manage new connection}
+
+![App start up and loading of model]{./start_up.png}
+
+![Init server and manage new connection]{./new_conn.png}
+
 ## Requisitos 
 Se debe tener instalado los siguientes elementos en el jetson nano
 * Jetson Inference
@@ -26,6 +29,7 @@ siguientes elementos:
 * Extensión de la imagen: ".jpg"
 * Separador: <SEP>
 * Tamaño en bytes del archivo: "10000"
+
 Una vez obtenidos estos datos se genera una cadena de caracteres aleatorios
 con los que se crea una carpeta donde se almacenaran los archivos temporales. Se recibe la imagen en chunks de 4096 bytes y se guarda en un archivo
 temporal. Por medio de la librería "jetson.utils"se carga el archivo temporal
@@ -40,6 +44,7 @@ campos:
 * Tamaño en bytes del archivo: "10000"
 * Separador: <SEP>
 * Oración generada: "Se detectaron los siguientes objetos: ..."
+
 Luego de enviar este mensaje se envía la imagen procesada al cliente en
 chunks de 4096 bytes. En caso de error se envía un mensaje con los siguientes
 campos:
@@ -48,4 +53,5 @@ campos:
 * Tamaño en bytes del archivo: "0"
 * Separador: <SEP>
 * Oración generada: .Ocurrió el siguiente error: ..."
+
 Para finalizar, se cierra la conexión TCP del socket con el cliente y se elimina la carpeta con los archivos temporales.
