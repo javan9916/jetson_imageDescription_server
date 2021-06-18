@@ -2,9 +2,9 @@
 Aplicación en Python para Jetson Nano que recive imagenes, hace inferencia sobre ellas y retorna al cliente una oración enumaerando las objetos detectados y la imagen con bounding boxes de los objetos detectados.
 Retorna mensajes informativos en la consola sobre las conexiones activas y las operaciones que esta realizando:
 
-![App start up and loading of model]{./start_up.png}
+![App start up and loading of model]{./img/start_up.png}
 
-![Init server and manage new connection]{./new_conn.png}
+![Init server and manage new connection]{./img/new_conn.png}
 
 ## Requisitos 
 Se debe tener instalado los siguientes elementos en el jetson nano
