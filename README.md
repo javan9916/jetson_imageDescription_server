@@ -27,7 +27,7 @@ otras conexiones al mismo tiempo. El proceso para atender una conexión
 se detallara a continuación, se recibe un mensaje inicial que debe tener los
 siguientes elementos:
 * Extensión de la imagen: ".jpg"
-* Separador: <SEP>
+* Separador: "<SEP>"
 * Tamaño en bytes del archivo: "10000"
 
 Una vez obtenidos estos datos se genera una cadena de caracteres aleatorios
@@ -40,18 +40,18 @@ lista con los objetos detectados en la imagen, se agrupan y contabilizan las inc
 Si no ocurrieron errores, se envía un mensaje al cliente con los siguientes
 campos:
 * Éxito en la operación: "True"
-* Separador: <SEP>
+* Separador: "<SEP>"
 * Tamaño en bytes del archivo: "10000"
-* Separador: <SEP>
+* Separador: "<SEP>"
 * Oración generada: "Se detectaron los siguientes objetos: ..."
 
 Luego de enviar este mensaje se envía la imagen procesada al cliente en
 chunks de 4096 bytes. En caso de error se envía un mensaje con los siguientes
 campos:
 * éxito en la operación: "False"
-* Separador: <SEP>
+* Separador: "<SEP>"
 * Tamaño en bytes del archivo: "0"
-* Separador: <SEP>
+* Separador: "<SEP>"
 * Oración generada: .Ocurrió el siguiente error: ..."
 
 Para finalizar, se cierra la conexión TCP del socket con el cliente y se elimina la carpeta con los archivos temporales.
